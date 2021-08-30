@@ -1,0 +1,91 @@
+body{
+    background-color: rgb(95, 130, 150);
+}
+h1{
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: aqua;
+}
+#container{
+    position: relative;
+    width: 100%;
+    }
+#runner{
+    width: 150px;
+    height: 150px;
+    background: url(../image/man1.png);
+    position: absolute;
+    top: 80px;
+    left: 35%;
+    animation-name: running;
+    animation-duration: .7s;
+    animation-timing-function: steps(6);
+    animation-iteration-count: infinite;
+}
+#board{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    background-color: black;
+    position: absolute;
+    top: 200px;
+    left: 30%;
+    transform:skew(-60deg);
+    justify-content: space-between;
+    align-items: center;   
+}
+.colorDot{
+    width: 50px;
+    height: 5px;
+    background-color: rgb(95, 130, 150);
+    text-align: center;
+    position: relative;
+    animation: DotAnimated 1s linear  infinite normal;
+    overflow: hidden;
+}
+#outSideBoard{
+    width: 350px;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    top: 200px;
+    left: 65%;
+    justify-content: space-between;
+    align-items: center;   
+}
+.outSideDot{
+    width: 50px;
+    height: 5px;
+    background-color: rgb(95, 130, 150);
+    text-align: center;
+    position: relative;
+    animation: outSideDotAnimated 1s linear .2s infinite normal;
+    overflow: hidden;
+}
+@keyframes DotAnimated {
+    0%{
+        left: 325px;
+    }
+   
+    100%{
+        left: -325px;
+    }
+}
+@keyframes outSideDotAnimated {
+    0%{
+        left: 325px;
+    }
+   
+    100%{
+        left: -325px;
+    }
+}
+@keyframes running {
+   0%{
+       background-position: 0px;
+   } 
+   100%{
+       background-position: 900px;
+   }
+}
